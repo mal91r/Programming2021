@@ -1,9 +1,12 @@
 using System;
 
-internal class Oak 
+[Serializable]
+public class Oak: Tree
 {
-    public Oak(int height, int age, int acornCount) 
+    public int acornCount;
+    public Oak(int height, int age, int acornCount): base(height, age)
     {
-        throw new NotImplementedException();
+        this.acornCount = acornCount;
     }
+    public Oak() { }
 }

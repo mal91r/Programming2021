@@ -1,9 +1,12 @@
 using System;
 
-internal class Ash
+[Serializable]
+public class Ash: Tree
 {
-    public Ash(int height, int age, int leafCount) 
+    public int leafCount;
+    public Ash(int height, int age, int leafCount): base(height, age) 
     {
-        throw new NotImplementedException();
+        this.leafCount = leafCount;
     }
+    public Ash() { }
 }
