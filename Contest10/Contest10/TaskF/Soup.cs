@@ -4,8 +4,20 @@ internal class Soup
 {
     public Soup(Ingredient[] ingredients)
     {
-        throw new NotImplementedException();
+        foreach (var ingredient in ingredients)
+        {
+            if (ingredient is Meat && !(ingredient as Meat).IsTasty)
+            {
+                WillEat = false;
+                return;
+            }
+            if (ingredient is Vegetable && (ingredient as Vegetable).IsAllergicTo)
+            {
+                WillEat = false;
+                return;
+            }
+        }
+        WillEat = true;
     }
-
-    public bool WillEat => throw new NotImplementedException();
+    public bool WillEat { get; }
 }
