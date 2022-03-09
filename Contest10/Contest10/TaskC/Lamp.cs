@@ -1,9 +1,14 @@
 using System;
+using System.Xml.Serialization;
 
-public class Lamp 
+public class Lamp : Furniture
 {
-    public Lamp(long id, TimeSpan lifeTime)
+    public int lifeTime;
+    private Lamp() : base()
     {
-        throw new NotImplementedException();
+    }
+    public Lamp(long id, TimeSpan lifeTime) : base(id)
+    {
+        this.lifeTime = ((int)lifeTime.TotalSeconds);
     }
 }

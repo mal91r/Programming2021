@@ -1,10 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
-public class Bed
+[XmlInclude(typeof(Pillow))]
+public class Bed : Furniture
 {
-    public Bed(long id, List<Pillow> pillows)
+    [XmlElement("pillow")]
+    public List<Pillow> pillows;
+    Bed() { }
+    public Bed(long id, List<Pillow> pillows) : base(id)
     {
-        throw new NotImplementedException();
+        this.pillows = pillows;
     }
 }
